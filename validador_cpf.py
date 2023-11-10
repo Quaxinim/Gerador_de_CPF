@@ -56,6 +56,6 @@ print(f'O segundo digito é: {digito_2}')
 cpf_gerado_calc = f'{nove_digitos}{digito_1}{digito_2}'
 
 if cpf_enviado_cliente == cpf_gerado_calc:
-    print('\033[32mO cpf é valido!\033[m')
+    print(f'\033[32mO cpf {cpf_enviado_cliente} é valido!\033[m')
 else:
-    print('\033[31mCpf invalido!\033[m')
+    print(f'\033[31mO cpf {cpf_enviado_cliente} invalido!\033[m')

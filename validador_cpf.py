@@ -1,12 +1,25 @@
-cpf_enviado_cliente = '74682489070'
+import re
+import sys
 
 # Variaveis Essenciais
-nove_digitos = (cpf_enviado_cliente[:9])
+cpf_enviado_cliente = ''
 nove_digitos_processado = []
 multiplicador = 10
 lista_digito_processado = []
 somatorio = 0
 digito_1 = 0
+
+entrada_cpf = input('Digite seu cpf: ')
+cpf_enviado_cliente = re.sub(r'[^0-9]', '', entrada_cpf)
+
+# Testa a entrada e conclui se ela é repetida ou não
+entrada_repetida = entrada_cpf == (entrada_cpf[0] * len(entrada_cpf))
+
+if entrada_repetida:
+    print('Dados sequenciais não são permitidos')
+    sys.exit()
+
+nove_digitos = (cpf_enviado_cliente[:9])
 
 # Multiplica todos os 9 digitos por 10, 9, 8, 7, 6, 5, 4, 3 e 2 e coloca na lista
 for digito_atual in nove_digitos:
